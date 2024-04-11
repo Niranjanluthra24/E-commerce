@@ -2,6 +2,8 @@ import React from 'react'
 
 export const ShopCategory = () => {
   return (
-    <div></div>
+    <div>
+      <h1>Hi</h1>
+    </div>
   )
 }
