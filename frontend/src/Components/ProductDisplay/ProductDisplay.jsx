@@ -6,6 +6,9 @@ import { ShopContext } from '../../Context/ShopContext';
 export const ProductDisplay = (props) => {
      const {addToCart} = useContext(ShopContext);  
     const {product} =props;
+   
+
+
   return (
     <div className='productdisplay'>
       <div className="productdisplay-left">
@@ -50,6 +53,7 @@ export const ProductDisplay = (props) => {
         <p className='productdisplay-right-category'><span>Category :</span>Women, T-Shirt, Crop Top</p>
         <p className='productdisplay-right-category'><span>Tags :</span>Modern, Latest</p>
       </div>
+ 
     </div>
   )
 }

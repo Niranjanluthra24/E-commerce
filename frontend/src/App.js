@@ -11,7 +11,8 @@ import { Footer } from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png';
 import women_banner from './Components/Assets/banner_women.png';
 import kid_banner from './Components/Assets/banner_kids.png';
-window.CartCount = 0;
+import {Random}  from './Components/Random/Random';
+
 function App() {
   return (
     <div >
@@ -27,6 +28,7 @@ function App() {
         </Route>
         <Route path='/login' element={<LoginSignup/>}/>
         <Route path='/cart' element={<Cart />} />
+        <Route path='/Random' element={<Random/>} />
       </Routes>
       <Footer />
      </BrowserRouter>

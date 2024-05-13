@@ -1,20 +1,22 @@
-/* Item */
-.item {
-    width: 100%; /* Change width to percentage for responsiveness */
-    max-width: 350px; /* Added max-width for larger screens */
-    margin: 0 auto;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
-    padding: 10px; /* Added padding for spacing */
-}
 
+.item {
+   
+    width: 280px; 
+    margin: 0 auto;
+    box-sizing: border-box; 
+    padding: 10px; 
+}
+.item img{
+    width: 280px;
+}
 .item p {
-    margin: 6px 0; /* Adjusted margin for spacing */
+    margin: 6px 0; 
 }
 
 .item-prices {
     display: flex;
     gap: 20px;
-    align-items: center; /* Align prices vertically */
+    align-items: center;
 }
 
 .item-price-new {
@@ -34,28 +36,52 @@
     transform: scale(1.05);
     transition: 0.6s;
 }
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-    /* Adjustments for smaller screens */
-    .item {
-        max-width: 100%; /* Change max-width to 100% for smaller screens */
+@media(max-width:1280px){
+    .item{
+        width: 230px;
+        font-size: 14px;
+      
+    }
+    .item img{
+        width: 230px;
+    }
+    .item-price-old{
+        font-size: 14px;
+    }
+    .item-price-new{
+        font-size: 16px;
     }
 }
-
-@media screen and (max-width: 480px) {
-    /* Adjustments for even smaller screens */
-    .item {
-        padding: 5px; /* Reduced padding for smaller screens */
+@media(max-width:1024px){
+    .item{
+        width: 185px;
+        font-size: 13px;
     }
-
-    .item-prices {
-        flex-direction: column; /* Stack prices vertically for smaller screens */
-        gap: 10px; /* Reduced gap between prices for smaller screens */
+    .item img{
+        width: 185px;
     }
+    .item-price-old{
+        font-size: 13px;
+    }
+}
+@media(max-width:800px){
+    .item{
+        width: 140px;
+        font-size: 12px;
+    }
+    .item img{
+        width: 140px;
+    }
+    .item-price-old{
+        font-size: 12px;
+    }
+}
+@media(max-width:500px){
+    .item{
+        width: 165px;
 
-    .item-price-old,
-    .item-price-new {
-        font-size: 16px; /* Reduced font size for smaller screens */
+    }
+    .item img{
+        width: 165px;
     }
 }
