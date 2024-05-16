@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
+import { NotificationContainer } from 'react-notifications';
 export const CartItems = () => {
     const {getTotalCartAmount,all_product,cartItems,removeFromCart} = useContext(ShopContext);
   return (
@@ -27,7 +28,9 @@ export const CartItems = () => {
                     <img className='carticon-remove-icon' src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt="" />
                 </div>
                 <hr />
+               
             </div>
+            
             }
             else{
                 return null;
@@ -62,6 +65,7 @@ export const CartItems = () => {
                     <button>Apply Promo Code</button>
                 </div>
             </div>
+            <NotificationContainer />
         </div>
     </div>
   )

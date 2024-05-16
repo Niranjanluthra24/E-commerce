@@ -3,6 +3,7 @@ import './ProductDisplay.css'
 import star_icon from '../Assets/star_icon.png';
 import star_dull_icon from '../Assets/star_dull_icon.png';
 import { ShopContext } from '../../Context/ShopContext';
+import { NotificationContainer } from 'react-notifications';
 export const ProductDisplay = (props) => {
      const {addToCart} = useContext(ShopContext);  
     const {product} =props;
@@ -53,7 +54,8 @@ export const ProductDisplay = (props) => {
         <p className='productdisplay-right-category'><span>Category :</span>Women, T-Shirt, Crop Top</p>
         <p className='productdisplay-right-category'><span>Tags :</span>Modern, Latest</p>
       </div>
- 
+      <NotificationContainer />
+    
     </div>
   )
 }

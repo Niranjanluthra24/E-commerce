@@ -1,7 +1,8 @@
 import React, { createContext, useState } from "react";
 import all_product from "../Components/Assets/all_product";
-export const ShopContext = createContext(null);
+import { NotificationManager} from 'react-notifications';
 
+export const ShopContext = createContext(null);
 
 const getDefaultCart = ()=>{
     let cart = {};
@@ -18,13 +19,15 @@ const ShopContextProvider =(props)=>{
        
         setcartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
         // console.log(cartItems[itemId]);
-       
+      
+            NotificationManager.success("Added to cart",'Close after 2000ms', 2000);
+         
         
      }
      const removeFromCart = (itemId)=>{
-        
+        NotificationManager.error("Removed from cart",'Close after 2000ms', 2000);
         setcartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
-       
+        
        
         // for(const items in cartItems){
         //      count+=cartItems[items];
