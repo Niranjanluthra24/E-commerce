@@ -19,7 +19,7 @@ export const Navbar = (props) => {
     <div className='navbar'>
      <div className='nav-logo'>
         <img src={logo} alt="Logo"/>
-        <p>SHOPNOW</p>
+        <p>SHOPPER</p>
      </div>
      <img className='nav-dropdown' onClick={dropdown_toggle} src={nav_dropdown} alt="" />
      <ul ref={menuRef} className="nav-menu">
