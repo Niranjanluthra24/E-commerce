@@ -25,6 +25,7 @@ const LoginSignup = () => {
       console.log(dataObj);
       if (dataObj.success) {
         localStorage.setItem('auth-token',dataObj.token);
+        localStorage.setItem('Username',dataObj.username);
         window.location.replace("/");
       }
       else
@@ -48,6 +49,8 @@ const LoginSignup = () => {
 
       if (dataObj.success) {
         localStorage.setItem('auth-token',dataObj.token);
+        // console.log(dataObj);
+        // localStorage.setItem('username',dataObj.username);
         window.location.replace("/");
       }
       else

@@ -9,6 +9,7 @@ const AddProduct = () => {
       name:"",
       image:"",
       category:"women",
+      product_type:"Shirt",
       new_price:"",
       old_price:""
   });
@@ -81,8 +82,20 @@ const AddProduct = () => {
           <option value="kid">Kid</option>
         </select> 
       </div>
-      <div className="addproduct-itemfield">
-        <p>Product title</p>
+   
+       <div className="addproduct-productcategory">
+        <p>cloth category</p>
+        <select value={productDetails.product_type} name="product_type" className="add-product-selector" onChange={changeHandler}>
+          <option value="Shirt">Shirt</option>
+          <option value="T-Shirt">T Shirt</option>
+          <option value="Jacket">Jacket</option>
+          <option value="Jeans">Jeans</option>
+          <option value="Top">Top</option>
+
+        </select> 
+     </div>
+      <div className="addproduct-itemcategory"> 
+        <p>Product Image</p>
         <label for="file-input">
           <img className="addproduct-thumbnail-img" src={!image?upload_area:URL.createObjectURL(image)} alt="" />
         </label>
@@ -90,7 +103,7 @@ const AddProduct = () => {
       </div>
       <button className="addproduct-btn" onClick={()=>{AddProduct()}}>ADD</button>
     </div>
-  );
-};
+  )
+  }
 
 export default AddProduct;
