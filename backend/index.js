@@ -24,13 +24,13 @@ mongoose.connect("mongodb+srv://Niranjanluthra24:Samluthra24@cluster0.yibxfkp.mo
 });
 
 // Image Storage Engine 
-const storage = multer.diskStorage({
-  destination: './upload/images',
-  filename: (req, file, cb) => {
-    console.log(file);
-    return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
-  }
-});
+//const storage = multer.diskStorage({
+  //destination: './upload/images',
+  //filename: (req, file, cb) => {
+    //console.log(file);
+    //return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
+  //}
+//});
 // const upload = multer({ storage: storage });
 // app.post("/upload", upload.single('product'), (req, res) => {
 //   res.json({
