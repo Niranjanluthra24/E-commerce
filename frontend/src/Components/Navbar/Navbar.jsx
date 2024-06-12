@@ -30,6 +30,12 @@ const Navbar = () => {
         <li onClick={()=>{setMenu("mens")}}><Link to='/mens' style={{ textDecoration: 'none' }}>Men</Link>{menu==="mens"?<hr/>:<></>}</li>
         <li onClick={()=>{setMenu("womens")}}><Link to='/womens' style={{ textDecoration: 'none' }}>Women</Link>{menu==="womens"?<hr/>:<></>}</li>
         <li onClick={()=>{setMenu("kids")}}><Link to='/kids' style={{ textDecoration: 'none' }}>Kids</Link>{menu==="kids"?<hr/>:<></>}</li>
+        {localStorage.getItem('auth-tokken')
+        ?<li onClick={()=>{setMenu("profile")}}><Link to='/order' style={{ textDecoration: 'none' }}>Orders</Link>{menu==="profile"?<hr/>:<></>}</li>
+        :<></>}
+
+
+        
       </ul>
       <div className="nav-login-cart">
         {localStorage.getItem('auth-token')

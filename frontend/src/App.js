@@ -1,5 +1,6 @@
 import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import 'react-notifications/lib/notifications.css';
 import Shop from "./Pages/Shop";
 import Cart from "./Pages/Cart";
 import Product from "./Pages/Product";
@@ -9,6 +10,7 @@ import women_banner from "./Components/Assets/banner_women.png";
 import men_banner from "./Components/Assets/banner_mens.png";
 import kid_banner from "./Components/Assets/banner_kids.png";
 import LoginSignup from "./Pages/LoginSignup";
+import Payment from "./Pages/Payment";
 
 function App() {
 
@@ -25,6 +27,7 @@ function App() {
             <Route path=':productId' element={<Product />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
+          <Route path="/payment" element={<Payment/>} />
           <Route path="/login" element={<LoginSignup/>} />
         </Routes>
         <Footer />
