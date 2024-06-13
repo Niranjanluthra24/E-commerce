@@ -249,7 +249,7 @@ app.listen(port, (error) => {
 app.get("/",(req,res)=>{
   res.send("Hello");
 })
-app.get("/retrieve/:id",(req,res)=>{
-  // let product = Product.findOne(Product.id==id)
-  res.send(id);
+app.get("/retrieve/",(req,res)=>{
+  let product = Product.findOne(Product.id==1);
+  res.send(product);
 })
