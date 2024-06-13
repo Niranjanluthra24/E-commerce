@@ -250,6 +250,6 @@ app.get("/",(req,res)=>{
   res.send("Hello");
 })
 app.get("/retrieve/:id",(req,res)=>{
-  let product = Product.findOne(Product.id==id)
-  res.send(product);
+  // let product = Product.findOne(Product.id==id)
+  res.send(id);
 })
