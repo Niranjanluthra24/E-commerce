@@ -7,8 +7,8 @@ const mongoose = require("mongoose");
 // const path = require("path");
 // const cors = require("cors");
 
-// app.use(express.json());
-// app.use(cors());
+app.use(express.json());
+ //app.use(cors());
 
 // const authRoute = require('./Route/Auth'); // Correct import
 // app.use('/api/auth', authRoute); // Correct usage
@@ -248,8 +248,9 @@ app.listen(port, (error) => {
 });
 app.get("/",(req,res)=>{
   res.send("Hello");
-})
-app.get("/retrieve/",(req,res)=>{
-  let product = Product.findOne(Product.id==1);
+});
+app.get("/retrieve/",async(req,res)=>{
+  let product = await Product.find({});
+  console.log(product);
   res.send(product);
-})
+});
