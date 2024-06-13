@@ -1,7 +1,7 @@
 const port = 4000;
 const express = require("express");
 const app = express();
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 // const jwt = require("jsonwebtoken");
 // const multer = require("multer");
 // const path = require("path");
@@ -14,14 +14,15 @@ const app = express();
 // app.use('/api/auth', authRoute); // Correct usage
 
 // // Database Connection With MongoDB
-// mongoose.connect("mongodb+srv://Niranjanluthra24:Samluthra24@cluster0.yibxfkp.mongodb.net/e-commerce", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// }).then(() => {
-//   console.log("Connected to MongoDB");
-// }).catch((err) => {
-//   console.log("Error connecting to MongoDB: ", err);
-// });
+ mongoose.connect("mongodb+srv://Niranjanluthra24:Samluthra24@cluster0.yibxfkp.mongodb.net/e-commerce", {
+ useNewUrlParser: true,
+ useUnifiedTopology: true
+ }).then(() => {
+   console.log("Connected to MongoDB");
+ }).catch((err) => {
+   console.log("Error connecting to MongoDB: ", err);
+ });
+ 
 
 // // Image Storage Engine 
 // //const storage = multer.diskStorage({
@@ -71,38 +72,38 @@ const app = express();
 // });
 
 // // Schema for creating Product
-// const Product = mongoose.model("Product", {
-//   id: {
-//     type: Number,
-//     required: true,
-//   },
-//   name: {
-//     type: String,
-//     required: true,
-//   },
-//   image: {
-//     type: String,
-//     required: true,
-//   },
-//   product_type: {
-//     type: String,
-//     required: true,
-//   },
-//   category: {
-//     type: String,
-//     required: true,
-//   },
-//   new_price: Number,
-//   old_price: Number,
-//   date: {
-//     type: Date,
-//     default: Date.now,
-//   },
-//   available: {
-//     type: Boolean,
-//     default: true,
-//   },
-// });
+const Product = mongoose.model("Product", {
+  id: {
+    type: Number,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  product_type: {
+    type: String,
+    required: true,
+  },
+  category: {
+    type: String,
+    required: true,
+  },
+  new_price: Number,
+  old_price: Number,
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+  available: {
+    type: Boolean,
+    default: true,
+  },
+});
 
 // app.get("/", (req, res) => {
 //   res.send("Root");
@@ -247,4 +248,8 @@ app.listen(port, (error) => {
 });
 app.get("/",(req,res)=>{
   res.send("Hello");
+})
+app.get("/retrieve/:id",(req,res)=>{
+  let product = Product.findOne(Product.id==id)
+  res.send(product);
 })
