@@ -10,7 +10,7 @@ const ShopCategory = (props) => {
   const [selectedProductType, setSelectedProductType] = useState(null);
 
   const fetchInfo = () => { 
-    fetch('http://localhost:4000/allproducts')
+    fetch('https://e-commerce-topaz-xi-71.vercel.app/allproduct')
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   };
